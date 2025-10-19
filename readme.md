@@ -1,51 +1,13 @@
-A* Pathfinding Visualizer (Optimized)
+I built this project because I wanted to see an algorithm think.
 
-A responsive, single-page web application demonstrating an optimized implementation of the A* search algorithm. This project showcases proficiency in core computer science algorithms, optimized data structures, and front-end development using vanilla JavaScript and HTML Canvas.
+Most of the time, pathfinding is something that happens quietly inside a computer. We know it works, we know it’s efficient, but we rarely get to see how it reasons its way through a problem. The A* algorithm, in particular, has always fascinated me — the way it balances exploration and intuition, searching just enough of the unknown to find the best possible path.
 
- Key Technical Features
+This visualizer turns that process into something you can watch and interact with. You draw walls, set a start and an end, and then the algorithm begins to move — patiently, step by step — mapping out possibilities until it finds the shortest route. The animation slows things down just enough for you to see the logic unfold in real time. Every decision, every step, is visible.
 
-This visualization is built to perform efficiently, directly demonstrating advanced algorithmic knowledge:
+Technically, the project is simple by design. It’s a single-page application written in JavaScript, using a custom Min-Heap to make the algorithm efficient. The grid supports eight directions of movement, with diagonal steps measured by true distance. The canvas resizes automatically for any screen, and the performance metrics appear as the algorithm runs, showing exactly how much work it’s doing to solve the puzzle.
 
-Optimized Data Structure (Min-Heap):
+But beyond the details, this project is about curiosity. It’s about watching a piece of logic behave almost like something alive — probing the world, backtracking, and eventually finding its way. I like to think of it as a small, digital experiment in clarity: a way to show that even in something as mechanical as an algorithm, there is a trace of intention, a rhythm of discovery that feels familiar.
 
-The openSet (priority queue) is custom-implemented using a Min-Heap, ensuring that extracting the node with the lowest F-cost is an efficient $O(\log N)$ operation. This is a critical performance optimization over typical $O(N)$ linear searches.
+You can open the file in any browser and try it yourself. It’s self-contained, responsive, and ready to explore.
 
-Advanced Path Calculation (8-Directional Movement):
-
-The algorithm supports movement in all eight directions (cardinal and diagonal).
-
-Path costs are accurately calculated: 1.0 for cardinal steps and $\text{Math.SQRT2}$ ($\approx 1.414$) for diagonal steps, ensuring the path found is truly the shortest distance in Euclidean space.
-
-Performance Profiling and Observability:
-
-The aStar function includes built-in performance tracking using performance.now().
-
-The UI displays the total search time and the number of nodes explored, providing real-time observability into the algorithm's efficiency for any given grid configuration.
-
-Responsive UI:
-
-The application is fully responsive, utilizing Tailwind CSS for layout and dynamically resizing the Canvas based on the viewport size, ensuring usability on desktop and mobile devices.
-
-💻 How to Run
-
-This is a self-contained, single-file project (index.html).
-
-For Local Use: Simply download the index.html file and open it in any modern web browser.
-
-For Deployment (GitHub Pages): Upload the index.html file to a GitHub repository. Enable GitHub Pages for the repository, setting the source to the main branch. The app will be live instantly.
-
-🛠️ Usage Instructions
-
-Draw Walls: Click and drag on the grid to toggle cells into walls (dark gray).
-
-Set Start/End: Click the "Set Start (S)" or "Set End (E)" buttons and then click the desired cell on the grid. The mode will automatically revert to "Wall Drawing."
-
-Run: Click the "Run A*" button to start the animation.
-
-Results:
-
-Visited Nodes turn light blue.
-
-The final Shortest Path turns amber.
-
-The status message displays the search time and complexity metrics.
+At its heart, this project isn’t just about A*. It’s about what happens when an idea moves from theory into motion — when the abstract becomes visible, and the invisible becomes understandable.
